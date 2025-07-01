@@ -1,6 +1,9 @@
 provider "aws" {
   region = var.aws_region
 }
+resource "random_id" "suffix" {
+  byte_length = 4
+}
 
 resource "aws_iam_role" "lambda_exec" {
   name = "lambda_exec_role"
